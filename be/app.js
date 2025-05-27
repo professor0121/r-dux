@@ -3,6 +3,7 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import session from 'express-session';
 import authRoute from './routes/authRoute.js';
+import principleRoute from './routes/principalRoute.js';
 
 
 
@@ -33,5 +34,6 @@ app.get('/', (req, res) => {
 })
 
 app.use('/api/auth',authRoute)
+app.use('/api/admin/principal',principleRoute);
 
 export default app;

@@ -1,6 +1,8 @@
 import User from '../models/userModel.js';
 import Student from '../models/studentModel.js';
 import Faculty from '../models/facultiModel.js';
+
+
 export const registerController = async (req, res) => {
   try {
     const {
@@ -109,7 +111,7 @@ export const logOutController = (req, res) => {
       console.error(err);
       return res.status(500).json({ message: 'Logout failed' });
     }
-    res.clearCookie('connect.sid'); // default cookie name for express-session
+    res.clearCookie('connect.sid'); 
     res.json({ message: 'Logged out successfully' });
   });
 };
